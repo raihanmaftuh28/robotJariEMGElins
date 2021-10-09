@@ -36,6 +36,7 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 //  Serial.setTimeout(1000000);
+  Serial.setTimeout(1);
   gripperServo.attach(PA0); //jempol
   gripperServo2.attach(PA1);
   gripperServo3.attach(PA2);
@@ -51,6 +52,7 @@ void setup() {
   //Serial.println("Posisi awal di 1250");
 }
 //coba pulse
+String rea;
 int coba=1700;
 int coba2=1700;
 int coba3=1700;
@@ -61,13 +63,15 @@ void loop() {
 ////  servoTargetPos = 670;
 // 
 ////
-  if (Serial.available()) {
-    coba = Serial.parseInt();
-    coba2 = Serial.parseInt();
-    coba3 = Serial.parseInt();
-    coba4 = Serial.parseInt();
-    coba5 = Serial.parseInt();
+  if (Serial.available()>1) {
+//    coba = Serial.parseInt();
+//    coba2 = Serial.parseInt();
+//    coba3 = Serial.parseInt();
+//    coba4 = Serial.parseInt();
+//    coba5 = Serial.parseInt();
+  rea = Serial.readString();
   }
+  terimaDanKasih(rea);
   if(coba!=0){
     servoTargetPos=coba;
   }
@@ -194,3 +198,27 @@ void gripperServoControl()
   gripperServo4.writeMicroseconds(currentPos4);
   gripperServo5.writeMicroseconds(currentPos5);
 }
+
+void terimaDanKasih (String dataSer){
+  int a = 0;
+  for (int i = 0; i < 5 ; i++){
+    switch(i){
+      case 0 :
+      coba = dataSer.substring(a,a+4).toInt();
+      break;
+      case 1 : 
+      coba2 = dataSer.substring(a,a+4).toInt();
+      break;
+      case 2:
+      coba3 = dataSer.substring(a,a+4).toInt();
+      break;
+      case 3:
+      coba4 = dataSer.substring(a,a+4).toInt();
+      break;
+      case 4:
+      coba5 = dataSer.substring(a,a+4).toInt();
+      break;
+    }
+    a += 4;
+  }
+  }
