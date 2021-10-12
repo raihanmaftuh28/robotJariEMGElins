@@ -16,7 +16,7 @@ Servo gripperServo2;
 Servo gripperServo3;
 Servo gripperServo4;
 Servo gripperServo5;
-Servo gripperServo6;
+
 
 int currentPos=2400,servoTargetPos=2400;
 int currentPos2=2400,servoTargetPos2=2400;
