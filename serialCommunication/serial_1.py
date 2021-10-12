@@ -8,37 +8,37 @@ def write(x):
     arduino.write(bytes(x,'utf-8'))
     time.sleep(1)
 def command(a):
-    if a == "buka":
+    if a == "b":
         return('24002400240024002400')
-    elif a == 'tutup' :
-        return('16000800060005500600')
-    elif a == 'jempolBuka':
-        return('24000000000000000000')
-    elif a == 'telunjukBuka':
-        return('00002200000000000000')
-    elif a == 'tengahBuka':
-        return('00000000220000000000')
-    elif a == 'manisBuka':
-        return('00000000000019000000')
-    elif a == 'kelingkingBuka':
-        return('00000000000000001800')
-    elif a == 'jempolTutup':
-        return('16000000000000000000')
-    elif a == 'telunjukTutup':
-        return('00000800000000000000')
-    elif a == 'tengahTutup':
-        return('00000000060000000000')
-    elif a == 'manisTutup':
-        return('00000000000005500000')
-    elif a == 'jempolTutup':
-        return('00000000000000000600')
+    elif a == 't' :
+        return('14001200120012001200')
+    elif a == 'at':
+        return('16002400240024002400')
+    elif a == 'bt':
+        return('24001600240024002400')
+    elif a == 'ct':
+        return('24002400160024002400')
+    elif a == 'dt':
+        return('24002400240016002400')
+    elif a == 'et':
+        return('24002400240024001600')
+    elif a == 'ab':
+        return('24001600160016001600')
+    elif a == 'bb':
+        return('16002400160016001600')
+    elif a == 'cb':
+        return('16001600240016001600')
+    elif a == 'db':
+        return('16001600160024001600')
+    elif a == 'eb':
+        return('16001600160016002400')
     else :
         return ('0')
 
 while True:
     a = input("command? : ")
     data = command(a)
-    if a == '0':
+    if data == '0':
         print('Wrong Command')
     else :
         write(data)
