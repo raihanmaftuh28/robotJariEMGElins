@@ -2,11 +2,11 @@
  * servo untuk robot jari 1 dof itu range 1700-2500max 1700buka 2500 tutup
  * CCW untuk naik
  * CW untuk turun
- * Jempol dari tutup ke buka 1600 - 2400 posisi defalt 1700
- * Telunjuk dari tutup ke buka 800 - 2200 posisi default di 1700
- * Tengah dari tutup ke buka 600 - 2200 posisi default di 1700
- * Manis dari tutup ke buka 550 - 1900 posisi default di 1700
- * Kelingking dari tutup ke buka 600 - 1800 posisi default di 1700
+ * Jempol dari tutup ke buka 1400 - 2400 posisi defalt 1700
+ * Telunjuk dari tutup ke buka 1200 - 2400 posisi default di 1700
+ * Tengah dari tutup ke buka 1200 - 2400 posisi default di 1700
+ * Manis dari tutup ke buka 1200 - 2400 posisi default di 1700
+ * Kelingking dari tutup ke buka 1200 - 2400 posisi default di 1700
  */
 
 #include<Servo.h>
@@ -16,6 +16,7 @@ Servo gripperServo2;
 Servo gripperServo3;
 Servo gripperServo4;
 Servo gripperServo5;
+
 
 int currentPos=2400,servoTargetPos=2400;
 int currentPos2=2400,servoTargetPos2=2400;
@@ -54,15 +55,15 @@ int coba4=1700;
 int coba_last=1700;
 void loop() {
   if (Serial.available()>1) {
-    coba = Serial.parseInt();
-    coba2 = Serial.parseInt();
-    coba3 = Serial.parseInt();
-    coba4 = Serial.parseInt();
-    coba_last = Serial.parseInt();
-//  rea = Serial.readString();
+//    coba = Serial.parseInt();
+//    coba2 = Serial.parseInt();
+//    coba3 = Serial.parseInt();
+//    coba4 = Serial.parseInt();
+//    coba_last = Serial.parseInt();
+  rea = Serial.readString();
   }
 // untuk menerima data dari program python dari laptop  
-//  terimaDanKasih(rea);
+  terimaDanKasih(rea);
   
 // if coba ini untuk aktifkan 
   //servo melalui serial monitor
