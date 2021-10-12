@@ -55,15 +55,15 @@ int coba4=1700;
 int coba_last=1700;
 void loop() {
   if (Serial.available()>1) {
-    coba = Serial.parseInt();
-    coba2 = Serial.parseInt();
-    coba3 = Serial.parseInt();
-    coba4 = Serial.parseInt();
-    coba_last = Serial.parseInt();
-//  rea = Serial.readString();
+//    coba = Serial.parseInt();
+//    coba2 = Serial.parseInt();
+//    coba3 = Serial.parseInt();
+//    coba4 = Serial.parseInt();
+//    coba_last = Serial.parseInt();
+  rea = Serial.readString();
   }
 // untuk menerima data dari program python dari laptop  
-//  terimaDanKasih(rea);
+  terimaDanKasih(rea);
   
 // if coba ini untuk aktifkan 
   //servo melalui serial monitor
