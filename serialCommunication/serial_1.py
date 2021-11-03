@@ -43,6 +43,3 @@ while True:
     else :
         write(data)
     
-    # print(read())
-    # else:
-    #     print('invalid')

@@ -55,7 +55,7 @@ int coba4=1700;
 int coba_last=1700;
 void loop() {
   if (Serial.available()>1) {
-//    coba = Serial.parseInt();
+//   coba = Serial.parseInt();
 //    coba2 = Serial.parseInt();
 //    coba3 = Serial.parseInt();
 //    coba4 = Serial.parseInt();
